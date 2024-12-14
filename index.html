@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <title>InvGestor</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+   
+    <header>
+        <div class="container">
+
+            <p class="logo">
+                InvGestor
+            </p>
+
+            <nav>
+                <a >Ayuda</a>
+                <a >Contacto</a>
+            </nav>
+            
+        </div>
+    </header>
+    <div class="main-container">
+
+        <div class="sidebar">
+
+            
+            <button class="toggle-btn" id="contraerOpciones">☰&nbsp;&nbsp;<span class="textoBoton">Opciones</span></button>
+
+            <input type="checkbox" id="toggleOptions" class="toggle-checkbox" hidden>        
+            <label for="toggleOptions" class="collapse-btn" id="opcionesBasicas">
+            <span class="arrow">&#9662;&nbsp;&nbsp;</span><span class="textoBoton">Opciones Básicas</span>
+            </label>
+
+            <div class="options-container">
+
+                
+                <div class="radio-group">
+
+                    <h3>Mi objetivo es...</h3>
+                
+                    <div class="form">
+                        <label for="tipo_optimizacion1">Minimizar Gastos</label>
+                        <input name="tipo_optimizacion" id="tipo_optimizacion1" type="radio" value="minimizar" checked>
+                        
+                        <label for="tipo_optimizacion2">Maximizar Ganancias</label>
+                        <input name="tipo_optimizacion" id="tipo_optimizacion2" type="radio" value="maximizar">
+                    </div>
+                
+                </div>
+                <div class="radio-group">
+
+                    <h3>Cantidad de productos a considerar</h3>
+
+                    <div class="form">
+                        <label for="cant_productos1">Solo uno</label>
+                        <input name="cant_productos" id="cant_productos1" value="constante" type="radio" checked>
+                        
+                        <label for="cant_productos2">Más de uno</label>
+                        <input name="cant_productos" id="cant_productos2" value="variable" type="radio">
+                    </div>
+                    
+                </div>
+                <div class="radio-group" id="vender">
+
+                    <h3>El precio de venta es...</h3>
+                
+                    <div class="form">           
+                        <label for="p_venta1">Igual al de producción</label>
+                        <input name="p_venta" id="p_venta1" type="radio" value="constante" checked>
+                        
+                        <label for="p_venta2">Diferente al de producción</label>
+                        <input name="p_venta" id="p_venta2" type="radio" value="variable">           
+                    </div>
+                
+                </div>            
+                <div class="radio-group">
+
+                    <h3>El almacen tiene capacidad...</h3>
+                
+                    <div class="form">         
+                        <label for="almacen1">Ilimitada <span style="color: rgb(228, 40, 40);">*</span></label>
+                        <input name="almacen" id="almacen1" value="constante" type="radio">
+                        
+                        <label for="almacen2">Limitada</label>
+                        <input name="almacen" id="almacen2" type="radio" value="variable" checked>           
+                    </div>
+                
+                </div>           
+                 
+                <div class="radio-group">
+
+                    <h3>La demanda de productos por periodo de tiempo es...</h3>
+                
+                    <div class="form">         
+                        <label for="demanda1">Diferente para cada producto<span class="asterisco">*</span></label>
+                        <input name="demanda" id="demanda1" value="variable" type="radio" checked>
+                        
+                        <label for="demanda2">Igual para todos los productos</label>
+                        <input name="demanda" id="demanda2" type="radio" value="constante">    
+                    </div>
+                
+                </div>       
+                <div class="radio-group">
+
+                    <h3>El coste de almacenamiento es...</h3>
+                
+                    <div class="form">       
+                        <label for="coste_almacenamiento1">Diferente para cada producto</label>
+                        <input name="coste_almacenamiento" id="coste_almacenamiento1" value="variable" type="radio" checked>
+                        
+                        <label for="coste_almacenamiento2">Igual para todos los productos</label>
+                        <input name="coste_almacenamiento" id="coste_almacenamiento2" value="constante" type="radio">       
+                    </div>
+                
+                </div>         
+                    
+                <div class="radio-group">
+
+                    <h3>Me quiero preparar para...</h3>
+                
+                    <div class="form">
+                        <label for="tiempo_total1">Una semana</label>
+                        <input name="tiempo_total" id="tiempo_total1" type="radio" value="7" checked>
+                        
+                        <label for="tiempo_total2">Un mes</label>
+                        <input name="tiempo_total" id="tiempo_total2" type="radio" value="31">
+                
+                        <label for="tiempo_total3">Un trimestre</label>
+                        <input name="tiempo_total" id="tiempo_total3" type="radio" value="93">
+                
+                        <label for="tiempo_total4">Un año</label>
+                        <input name="tiempo_total" id="tiempo_total4" type="radio" value="365">
+                
+                        <label for="tiempo_total5">Una cantidad específica de días</label>
+                        <input name="tiempo_total" id="tiempo_total5" type="radio">         
+                    </div>
+                
+                </div>         
+                <div class="radio-group">
+
+                    <h3>En intervalos de...</h3>
+                
+                    <div class="form">         
+                        <label for="tiempo_intervalo1">Un día</label>
+                        <input name="tiempo_intervalo" id="tiempo_intervalo1" value="1" type="radio" checked>
+                        
+                        <label for="tiempo_intervalo2">Una semana</label>
+                        <input name="tiempo_intervalo" id="tiempo_intervalo2" value="7" type="radio">
+                
+                        <label for="tiempo_intervalo3">Un mes</label>
+                        <input name="tiempo_intervalo" id="tiempo_intervalo3" value="31" type="radio">
+                
+                        <label for="tiempo_intervalo4">Un trimestre</label>
+                        <input name="tiempo_intervalo" id="tiempo_intervalo4" value="93" type="radio">
+                
+                        <label for="tiempo_intervalo5">Un año</label>
+                        <input name="tiempo_intervalo" id= "tiempo_intervalo5" value= "365"type= "radio">
+                
+                        <label for="tiempo_intervalo6">Una cantidad específica de días</label>
+                        <input name= "tiempo_intervalo"id= "tiempo_intervalo6"type= "radio">       
+                    </div>
+                
+                </div>
+
+            </div>
+            <input type="checkbox" id="toggleAdvancedOptions" class="toggle-checkbox" hidden checked>
+            <label for="toggleAdvancedOptions" class="collapse-btn" id="opcionesAvanzadas">
+            <span class="arrow">&#9662;</span>&nbsp;&nbsp;<span class="textoBoton">Opciones Avanzadas</span> 
+            </label>
+            
+            <div class="options-container advanced-options-container">
+                
+                <div class="radio-group">
+
+                    <h3>El precio de producción es...</h3>
+                
+                    <div class="form">      
+                        <label for="p_produccion1">Igual en cada periodo de tiempo</label>
+                        <input name="p_produccion" id="p_produccion1" value="constante" type="radio" checked>
+                        
+                        <label for="p_produccion2">Diferente según el periodo de tiempo</label>
+                        <input name="p_produccion" id="p_produccion2" value="variable" type="radio">      
+                    </div>
+                
+                </div>
+                <div class="radio-group">
+
+                    <h3>El proveedor...</h3>
+                
+                    <div class="form">          
+                        <label for="proveedor1">No tiene límite <span class="asterisco">*</span></label>
+                        <input name="proveedor" id="proveedor1" type="radio" value="constante" checked>
+                        
+                        <label for="proveedor2">Tiene límite, que es...</label>
+                        <input name="proveedor" id="proveedor2" type="radio" value="variable">
+                
+                        <label for="proveedor3">Diferente para cada producto</label>
+                        <input name="sublista" id="proveedor3" type="radio" value="diferente" disabled checked>
+                
+                        <label for="proveedor4">Igual para todos los productos</label>
+                        <input name="sublista" id="proveedor4" type="radio" value="igual" disabled>           
+                    </div>
+                
+                </div>                
+
+                <div class="radio-group">
+
+                    <h3>Con el tiempo, el coste de almacenamiento...</h3>
+                
+                    <div class="form">        
+                        <label for="aumento_almacenamiento1">Se mantiene igual</label>
+                        <input name="aumento_almacenamiento" id="aumento_almacenamiento1" value="constante" type="radio" checked>
+                        
+                        <label for="aumento_almacenamiento2">Cambia de valor</label>
+                        <input name="aumento_almacenamiento" id="aumento_almacenamiento2" value="variable" type="radio">     
+                    </div>
+                
+                </div>  
+
+
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="entradasNumericas">
+
+                <div class="input-container">
+                    <label for="cant_productos3">Cantidad de productos</label>
+                    <input type="number" id="cant_productos3" name="cant_productos" min="1" max="100" class="number-input" placeholder="Ej: 10" disabled>
+                </div>
+                <div class="input-container">
+                    <label for="almacen3">Capacidad Máxima del Almacén</label>
+                    <input type="number" id="almacen3" name="almacen" min="1" class="number-input" placeholder="Ej: 200 (Objetos en total)">
+                </div>
+                
+                <div class="input-container">
+                    <label for="proveedor5">Límite del proveedor</label>
+                    <input type="number" id="proveedor5" name="sublista" min="0" class="number-input" placeholder="Ej: 50 (Por periodo de tiempo)" disabled>
+                </div>
+                
+                <div class="input-container">
+                    <label for="demanda3">Demanda mínima de objetos</label>
+                    <input type="number" id="demanda3" name="demanda" min="0" class="number-input" placeholder="Ej: 15 (Por periodo de tiempo)" disabled>
+                </div>
+                
+                <div class="input-container">
+                    <label for="coste_almacenamiento3">Coste de almacenamiento</label>
+                    <input type="number" id="coste_almacenamiento3" name="sublista" min="0" class="number-input" placeholder="Ej: 2.5 (Por Periodo de tiempo)" disabled>
+                </div>
+                
+                
+                <div class="input-container">
+                    <label for="tiempo_total6">Tiempo total a considerar</label>
+                    <input type="number" id="tiempo_total6" name="sublista" min="1" max="1000" class="number-input" placeholder="Ej: 730 (días)" disabled>
+                </div>
+                <div class="input-container">
+                    <label for="tiempo_intervalo7">Duración de los intervalos</label>
+                    <input type="number" id="tiempo_intervalo7" name="sublista" min="1" max="999" class="number-input" placeholder="Ej: 500 (días)" disabled>
+                </div>
+            </div>
+
+            <div class="botones" style="border: none;">
+                <button id="b1">Empezar a Trabajar!</button>
+                <button id="b2">Guardar Entradas</button>
+                <button id="b3">Cargar Entradas</button>
+                <button id="b4" disabled>Guardar Resultados</button>
+            </div>
+            
+            <section id="input">
+                    
+                <h2 id="textoTabla">Seleccione la configuración necesaria y de click en "Empezar a Trabajar!"</h2>
+                
+                <div class="container">
+                    
+                    <div class="datainput">
+                        
+                        <table id="inputTable">
+                        </table>
+                            
+                    </div>
+                
+                    <div class="main_buttons">
+
+                        <button id="restart" style="display: none;">Borrar</button>
+                        <button id="calculate" style="display: none;">Calcular</button>
+                
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="resultados" style="display: none;">
+
+                <div class="resultado-tiempo">
+                    <h3>Tiempo de Ejecución</h3>
+                    <p id="tiempo-ejecucion">00:00.0000</p>
+                </div>
+            
+                <div class="resultado-valor-optimo">
+                    <h3>Valor Óptimo</h3>
+                    <p id="valor-optimo">Costo mínimo o ganancia máxima: 12000</p>
+                </div>
+                <div class="resultado-valor-optimo">
+                    <h3>Tipo Resultado</h3>
+                    <p id="tipo_resultado"></p>
+                </div>
+                
+            
+                <div class="resultado-valores">
+                    <h3>Valores Obtenidos</h3>
+            
+                    <div class="producto">
+                        <h4>Producto 1</h4>
+                        <table class="tabla-resultado">
+                            <thead>
+                                <tr>
+                                    <th>Periodo</th>
+                                    <th>Cantidad a Comprar (X)</th>
+                                    <th>Cantidad a Vender (V)</th>
+                                    <th>Cantidad a Almacenar (Y)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>50</td>
+                                    <td>30</td>
+                                    <td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>60</td>
+                                    <td>40</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>70</td>
+                                    <td>50</td>
+                                    <td>15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            
+                    <div class="producto">
+                        <h4>Producto 2</h4>
+                        <table class="tabla-resultado">
+                            <thead>
+                                <tr>
+                                    <th>Periodo</th>
+                                    <th>Cantidad a Comprar (X)</th>
+                                    <th>Cantidad a Vender (V)</th>
+                                    <th>Cantidad a Almacenar (Y)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>45</td>
+                                    <td>20</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>55</td>
+                                    <td>25</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>65</td>
+                                    <td>35</td>
+                                    <td>40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <p id="credits">Luis Fernando Rodríguez lfrodriguezd@unah.hn</p>
+        </div>
+
+        
+    </div>
+    
+
+
+
+    <script src="client.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+
+
+</body>
+
+</html>
+
